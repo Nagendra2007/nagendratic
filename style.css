@@ -11,6 +11,7 @@
     font-weight: 0;
     color : rgb(94, 94, 246);
     width : 100%;
+    padding-top : 15px;
 }
 body{
     overflow: hidden;
@@ -104,4 +105,5 @@ body{
 }
 #icon{
     color  : rgb(74, 119, 245,0.9);
+
 }
