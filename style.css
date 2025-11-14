@@ -93,6 +93,7 @@ body{
     box-shadow: 0 4px 12px rgba(44, 18, 211, 0.15);
     position : absolute;
     top : 85%;
+    left : 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,4 +109,18 @@ body{
     color  : rgb(74, 119, 245,0.9);
 
 }
+    .about{
+    color : rgb(5, 117, 255);
+    position : absolute;
+    top : 86%;
+    background: rgba(0, 140, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(58, 4, 252, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(44, 18, 211, 0.15);
+    padding : 10px;
+    
+
+}
+
 
