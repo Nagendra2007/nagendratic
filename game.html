@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Page 2</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style.css">
+<style>
+    body {
+        margin: 0;
+        font-family: Arial;
+        height: 100vh; 
+        overflow: hidden;  /* Prevent shake */
+        display : flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position : relative;
+    }
+
+    /* Overlay (background lighter + blur) */
+    .overlay {
+        position: fixed;
+        inset: 0; /* covers full screen */
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(3px);
+        display: none; /* Will show on load */
+        justify-content: center; /* Horizontal center */
+        align-items: center;     /* Vertical center */
+        z-index: 999; /* Always on top */
+    }
+
+    /* Popup box */
+    .popup {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        width: 300px;
+        text-align: center;
+        font-size: 18px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    .btn {
+        padding: 10px 20px;
+        background: royalblue;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+</style>
+
+</head>
+<body>
+
+   <div class="heading"><h1>TIC-TAC-TOE</h1></div>
+   <div class="gamecontainer">
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <div class="box" id="box4"></div>
+    <div class="box" id="box5"></div>
+    <div class="box" id="box6"></div>
+    <div class="box" id="box7"></div>
+    <div class="box" id="box8"></div>
+    <div class="box" id="box9"></div>
+   </div>
+<div class="mesage">
+    <p class="msg">Player&nbsp; "<i id="icon" class="fa-solid fa-xmark"></i>" Turn</p>
+</div>
+<div class="refresh" onclick="location.reload()">
+    <i class="fa-solid fa-arrow-rotate-right"></i>
+</div>
+
+<!-- Popup Overlay -->
+<div class="overlay" id="popupOverlay">
+    <div class="popup">
+         <b>First "<i id="into" class="fa-solid fa-xmark"></i>" Turn</b><br><br>
+        <button class="btn" onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+<script>
+    // Show popup centered on page load
+    window.onload = () => {
+        document.getElementById("popupOverlay").style.display = "flex";
+    }
+
+    function closePopup() {
+        document.getElementById("popupOverlay").style.display = "none";
+    }
+</script>
+<script src="script.js"></script>
+</body>
+</html>
