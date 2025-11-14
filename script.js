@@ -1,4 +1,4 @@
-let userX;
+
 document.addEventListener('gesturestart', function (e) {
     e.preventDefault();
 });
