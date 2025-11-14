@@ -81,6 +81,7 @@ body{
     display : flex;
     justify-content: center;
     align-items: center;
+    font-size : 20px;
 }
 .refresh{
     height : 50px;
@@ -107,3 +108,4 @@ body{
     color  : rgb(74, 119, 245,0.9);
 
 }
+
