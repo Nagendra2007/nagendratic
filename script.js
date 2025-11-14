@@ -1,4 +1,4 @@
-// Disable Trackpad pinch zoom (Mac/Windows)
+let userX;
 document.addEventListener('gesturestart', function (e) {
     e.preventDefault();
 });
@@ -11,6 +11,7 @@ document.addEventListener('gestureend', function (e) {
 let symbol = document.querySelector('#icon');
 let turnO = true;
 let boxes = document.querySelectorAll('.box');
+let sound = document.querySelector('#sound');
 
 function iconToggle(e) {
   const box = e.currentTarget;
@@ -24,6 +25,9 @@ function iconToggle(e) {
    symbol.classList.add("fa-regular","fa-circle");
    symbol.style.color="rgba(74, 119, 245,0.9)";
    symbol.style.color="rgba(255,123,0,1)"
+    console.log(box.getAttribute("id"));
+    sound.currentTime=0;
+    sound.play();
    turnO=false;
    }
    else {
@@ -33,6 +37,9 @@ function iconToggle(e) {
    symbol.classList.remove("fa-regular","fa-circle");
    symbol.classList.add("fa-solid","fa-xmark");
    symbol.style.color="rgba(74, 119, 245,0.9)";
+   console.log(box.getAttribute("id"));
+    sound.currentTime=0;
+    sound.play()
    turnO=true;
    }
 }
