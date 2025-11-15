@@ -8,6 +8,8 @@ document.addEventListener('gesturechange', function (e) {
 document.addEventListener('gestureend', function (e) {
     e.preventDefault();
 })
+let line = document.querySelector('#winline');
+line.style.backgroundColor="blue";
 let symbol = document.querySelector('#icon');
 let turnO = true;
 let boxes = document.querySelectorAll('.box');
@@ -109,36 +111,44 @@ let checkWinner = () =>{
 
 
 }
-// Draw winning line
-function drawWinLine(patternIndex) {
-    const line = document.getElementById("win-line");
-    let boxSize = boxes[0].offsetWidth;       // 100px
-    let lineLength = boxSize * 3;             // 300px
-
-    line.style.display = "block";
-    line.style.width = "0";
-
-    setTimeout(() => {
-        if(patternIndex === 0)
-            line.style.transform = `translate(-50%, calc(-50% - ${boxSize}px))`;
-        if(patternIndex === 1)
-            line.style.transform = `translate(-50%, -50%)`;
-        if(patternIndex === 2)
-            line.style.transform = `translate(-50%, calc(-50% + ${boxSize}px))`;
-
-        if(patternIndex === 3)
-            line.style.transform = `translate(-50%, -50%) rotate(90deg) translate(0, -${boxSize}px)`;
-        if(patternIndex === 4)
-            line.style.transform = `translate(-50%, -50%) rotate(90deg)`;
-        if(patternIndex === 5)
-            line.style.transform = `translate(-50%, -50%) rotate(90deg) translate(0, ${boxSize}px)`;
-
-        if(patternIndex === 6)
-            line.style.transform = `translate(-50%, -50%) rotate(45deg)`;
-
-        if(patternIndex === 7)
-            line.style.transform = `translate(-50%, -50%) rotate(-45deg)`;
-
-        line.style.width = (patternIndex < 6 ? lineLength : lineLength * 1.3) + "px";
-    }, 20);
+let drawWinLine = (pattern) =>{
+    if(pattern===0){
+        line.style.transform="translateY(-110px)";
+        line.style.display="flex";
+      
+    }
+    if(pattern===1){
+        line.style.display="flex";
+       
+    }
+    if(pattern===2){
+        line.style.transform="translateY(110px)";
+        line.style.display="flex";
+    }
+    if(pattern===3){
+        line.style.display="flex";
+        line.style.transform="rotate(90deg) translateY(110px)";
+   
+    }
+    if(pattern===4){
+        line.style.display="flex";
+        line.style.transform="rotate(90deg)";
+       
+    }
+    if(pattern===5){
+        line.style.display="flex";
+        line.style.transform="rotate(90deg) translateY(-110px)";
+      
+    }
+    if(pattern===6){
+        line.style.display="flex";
+        line.style.transform="rotate(45deg)";
+    
+    }
+    if(pattern===7){
+        line.style.display="flex";
+        line.style.transform="rotate(-45deg)";
+ 
+    }
 }
+          
