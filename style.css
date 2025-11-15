@@ -123,16 +123,15 @@ body{
 
 }
 /* WIN LINE */
-#win-line {
+#winline {
     position: absolute;
     height: 6px;
-    width: 0;
+    width: 320px;
     background: #ff3b3b;
     top: 50%;
-    left: 50%;
+    left: 1%;
     transform-origin: center;
-    display: none;
     border-radius: 5px;
     z-index: 999;
+    display : none;
 }
-
